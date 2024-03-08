@@ -24,6 +24,7 @@ public class CompraService {
             }
             compra.calculaPrecoTotal();
             System.out.println("Compra cadastrada com sucesso.");
+            compras.add(compra);
         }
 
     }
@@ -33,7 +34,8 @@ public class CompraService {
         for (Compra compra : compras) {
             System.out.println("Data da compra: " + compra.getDataCompra());
             System.out.println("Preço total da compra: " + compra.getPrecoTotal());
-            System.out.println("cliente: " + compra.getCliente());
+            System.out.println("Cliente: " + compra.getCliente().getNome());
+            System.out.println("CPF: " + compra.getCliente().getCpf());
         }
     }
 }

@@ -61,7 +61,9 @@ public class Main {
             }
 
             if (opcao.equalsIgnoreCase("4")) {
+                System.out.println("Digite o nome do produto:");
                 String nome = scanner.nextLine();
+                System.out.println("Digite o preço do produto:");
                 String precoString = scanner.nextLine();
                 Double preco = Double.parseDouble(precoString);
                 produtoService.cadastrarProduto(nome, preco);
@@ -90,20 +92,16 @@ public class Main {
                     }
                 }
 
-                if (opcao.equalsIgnoreCase("8")) {
-                    compraService.listarCompras();
-                }
-
                 if (clienteSelecionado != null) {
                     ArrayList<Produto> produtos = produtoService.listarProdutos();
 
                     ArrayList<Item> items = new ArrayList<>();
 
-                    System.out.println("Digite quantidade de produtos:");
-                    Integer quantidadeProdutos = scanner.nextInt();
+                    System.out.println("Digite quantidade de produtos que deseja adicionar:");
+                    Integer quantidadeProdutos = Integer.parseInt(scanner.nextLine());
 
                     for (int i = 0; i < quantidadeProdutos; i++) {
-                        System.out.println("Digite nome do produto");
+                        System.out.println("Digite nome do produto:");
                         String nomeProduto = scanner.nextLine();
 
                         Produto produtoSelecionado = null;
@@ -115,11 +113,12 @@ public class Main {
                         }
 
                         if (produtoSelecionado != null) {
-                            System.out.println("Digite a quantidade do produto");
-                            Integer quantidadeProduto = scanner.nextInt();
+                            System.out.println("Digite a quantidade do produto:");
+                            Integer quantidadeProduto = Integer.parseInt(scanner.nextLine());
 
                             Item item = new Item(quantidadeProduto, produtoSelecionado);
                             items.add(item);
+                            System.out.println("Produto adicionado com sucesso.");
 
                         } else {
                             System.out.println("Produto não encontrado.");
@@ -134,6 +133,10 @@ public class Main {
                     System.out.println("Cliente não encontrado.");
                 }
 
+            }
+
+            if (opcao.equalsIgnoreCase("8")) {
+                compraService.listarCompras();
             }
 
         }
