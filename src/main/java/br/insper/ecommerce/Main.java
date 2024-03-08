@@ -37,7 +37,7 @@ public class Main {
                     5 - Listar Produtos
                     6 - Excluir Produto
                     7 - Cadastrar Compra
-                    8 - Listar Compra
+                    8 - Listar Compras
                     9 - Sair
                     """);
             opcao = scanner.nextLine();
