@@ -27,7 +27,7 @@ public class Main {
         ProdutoService produtoService = new ProdutoService();
         CompraService compraService = new CompraService();
 
-        while(!opcao.equalsIgnoreCase("4")) {
+        while(!opcao.equalsIgnoreCase("9")) {
 
             System.out.println("""
                     1 - Cadastrar Cliente
