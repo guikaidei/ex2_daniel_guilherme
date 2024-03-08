@@ -28,5 +28,12 @@ public class CompraService {
 
     }
 
-
+    public void listarCompras() {
+        System.out.println("Lista de compras:");
+        for (Compra compra : compras) {
+            System.out.println("Data da compra: " + compra.getDataCompra());
+            System.out.println("Preço total da compra: " + compra.getPrecoTotal());
+            System.out.println("cliente: " + compra.getCliente());
+        }
+    }
 }

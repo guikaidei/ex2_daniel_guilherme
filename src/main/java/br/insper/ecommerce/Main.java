@@ -60,6 +60,23 @@ public class Main {
                 clienteService.excluirClientes(cpf);
             }
 
+            if (opcao.equalsIgnoreCase("4")) {
+                String nome = scanner.nextLine();
+                String precoString = scanner.nextLine();
+                Double preco = Double.parseDouble(precoString);
+                produtoService.cadastrarProduto(nome, preco);
+            }
+
+            if (opcao.equalsIgnoreCase("5")) {
+                produtoService.listarProdutos();
+            }
+
+            if (opcao.equalsIgnoreCase("6")) {
+                System.out.println("Digite o nome do produto para deletar:");
+                String nome = scanner.nextLine();
+                produtoService.excluirProduto(nome);
+            }
+
             if (opcao.equalsIgnoreCase("7")) {
                 Cliente clienteSelecionado = null;
                 ArrayList<Cliente> clientes = clienteService.listarClientes();
@@ -71,6 +88,10 @@ public class Main {
                     if (cpf.equalsIgnoreCase(cliente.getCpf())) {
                         clienteSelecionado = cliente;
                     }
+                }
+
+                if (opcao.equalsIgnoreCase("8")) {
+                    compraService.listarCompras();
                 }
 
                 if (clienteSelecionado != null) {
