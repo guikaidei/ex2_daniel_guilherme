@@ -94,6 +94,10 @@ public class Main {
                     compraService.listarCompras();
                 }
 
+                if (opcao.equalsIgnoreCase("9")) {
+                    System.out.println("Até a próxima!");
+                }
+
                 if (clienteSelecionado != null) {
                     ArrayList<Produto> produtos = produtoService.listarProdutos();
 
